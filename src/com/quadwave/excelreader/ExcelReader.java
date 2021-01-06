@@ -19,7 +19,6 @@ import com.quadwave.nbt.common.execution.entity.WorkflowInstance;
 import com.quadwave.nbt.common.execution.entity.WorkflowNode;
 import com.quadwave.nbt.common.execution.entity.WorkflowVariable;
 import com.quadwave.nbt.common.execution.java.JavaNodeHandler;
-import com.quadwave.nbt.common.service.dms.vo.BatchOutput;
 
 public class ExcelReader extends JavaNodeHandler {
 
@@ -29,7 +28,6 @@ public class ExcelReader extends JavaNodeHandler {
 		Uploader doUploader = executionContext.getDocumentService().newUploader(workflowInstance.getOrganizationId());
 		
 		WorkflowVariable variable = workflowInstance.getVariableByName("fileupload");
-		System.out.println(variable.getValue());
 		ObjectMapper mapper = new ObjectMapper();
 		String value = variable.getValue();
 		VariableDTO dto = null;
@@ -83,10 +81,10 @@ public class ExcelReader extends JavaNodeHandler {
 								break;
 							}
 							
-							WorkflowVariable header_var = workflowInstance.getVariableByName("header_var");
-							header_var.setValue(name);
-							System.out.println(header_var.getValue());
+							name = name.substring(0, name.length()-1);
 						} // end of cell iterator
+						WorkflowVariable header_var = workflowInstance.getVariableByName("header_var");
+						header_var.setValue(name);
 					} // end of rows iterator
 
 				} // end of sheets for loop

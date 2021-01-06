@@ -9,7 +9,6 @@
 	<classpathentry kind="lib" path="lib/poi-3.10.1.jar"/>
 	<classpathentry kind="lib" path="lib/poi-ooxml-3.10.1.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-databind-2.7.4.jar"/>
-	<classpathentry kind="lib" path="lib/spring-web-5.2.12.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-webmvc-5.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.30.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
